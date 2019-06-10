@@ -23,12 +23,16 @@ namespace Wpf_AntiqueShop
         ObservableCollection<CustomerName> customers;
         String filter = "";
         private bool storeData;
+        
 
 
         public Buyer_Seller_2_()
         {
             InitializeComponent();
-            var lst = new List<CustomerName> { new CustomerName {  firstName = "xxx", lastName = "yyyy"}, new CustomerName { firstName = "xxx", lastName = "yyyy" }, new CustomerName { firstName = "xxx", lastName = "yyyy" }, new CustomerName { firstName = "xxx", lastName = "yyyy" },};
+            //var lst = new List<CustomerName> { new CustomerName {  firstName = "xxx", lastName = "yyyy", Address = "zzz", Phone = "aaaa" },
+            //    new CustomerName { firstName = "xxx", lastName = "yyyy", Address = "zzz", Phone = "aaaa"  },
+            //    new CustomerName { firstName = "xxx", lastName = "yyyy", Address = "zzz", Phone = "aaaa"  },
+            //    new CustomerName { firstName = "xxx", lastName = "yyyy", Address = "zzz", Phone = "aaaa"  }};
             //TestStorage.WriteXml<List<CustomerName>>(lst, "CustomerData.xml");
             customers = TestStorage.ReadXml<ObservableCollection<CustomerName>>("CustomerData.xml");
             Lbx_students.ItemsSource = customers;
@@ -36,7 +40,7 @@ namespace Wpf_AntiqueShop
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            customers = GenerateCustomers(10);
+            customers = GenerateCustomers(20);
             //TestStorage.WriteXml<ObservableCollection<CustomerName>>(customers, "CustomerTest.xml");
         }
 
@@ -45,7 +49,7 @@ namespace Wpf_AntiqueShop
             var lst = new ObservableCollection<CustomerName>();
             for (int i = 0; i < cnt; i++)
             {
-                lst.Add(new CustomerName {  firstName = "xxxx", lastName ="yyyy" });
+                lst.Add(new CustomerName { firstName = "xxxx", lastName = "yyyy", Address = "zzz", Phone = "aaaa" });
             }
             return lst;
 
@@ -53,7 +57,8 @@ namespace Wpf_AntiqueShop
 
         private void Btn_add_Click(object sender, RoutedEventArgs e)
         {
-            var cust = new CustomerName { firstName = "Please edit!!!", lastName = "Please edit!!!" };
+            var cust = new CustomerName { firstName = "Please edit!!!", lastName = "Please edit!!!",
+                Address = "Please edit!!!", Phone = "Please edit!!!" };
             customers.Add(cust);
             Lbx_students.SelectedItem = cust;
             Lbx_students.ScrollIntoView(cust);
@@ -92,16 +97,53 @@ namespace Wpf_AntiqueShop
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Article is sold");
+            if (tb_firstName.Text == "" && tb_lastName.Text == "" && tb_address.Text =="" && tb_phone.Text == "" && tb_article.Text == "" && tb_price.Text == "")
+            {
+                MessageBox.Show("Please provide the information", "Error");
+
+            }
+            else
+            {
+                MessageBox.Show("Article is sold");
+            }
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var article = Tbx_article.SelectedText;
-            
-           
-            MessageBox.Show("Article is bought");
+            if (tb_firstName.Text == "" && tb_lastName.Text == "" && tb_address.Text == "" && tb_phone.Text == "" && tb_article.Text == "" && tb_price.Text == "")
+            {
+                MessageBox.Show("Please provide the information", "Error");
+
+            }
+            else
+            {
+                MessageBox.Show("Article is bought");
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            storeData = true;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (storeData)
+                TestStorage.WriteXml<ObservableCollection<CustomerName>>(customers, "CustomerTest.xml");
+
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Owner.Visibility = Visibility.Visible;
+
+        }
+
+        private void Window_Closing_2(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (storeData)
+                TestStorage.WriteXml<ObservableCollection<CustomerName>>(customers, "CustomerTest.xml");
 
         }
     }
