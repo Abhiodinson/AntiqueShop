@@ -5,33 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_AntiqueShop"
         mc:Ignorable="d"
+        Closing="Window_Closing_1"
         Title="Buyer_Seller_2_" Height="450" Width="800">
     <Grid Background="#FFF6EBEB" Margin="0,0,-0.4,-621">
-        <StackPanel DataContext="{Binding SelectedItem, ElementName=Lbx_students}" Margin="473,29,26,638" Orientation="Vertical">
+        <StackPanel DataContext="{Binding ElementName=Lbx_students, Path=SelectedItem}" Margin="473,29,26,638" Orientation="Vertical">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Buyer" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.048,-2.135"><Run Text="{Binding firstName}" Foreground="Blue" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}" /></TextBlock>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Firstname" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding firstName}" Width="120"/>
+                <TextBox x:Name="tb_firstName" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding firstName}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Last name" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding lastName}" Width="120"/>
+                <TextBox x:Name="tb_lastName" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding lastName}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Address" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="40" TextWrapping="Wrap" Text="{Binding address}" Width="120"/>
+                <TextBox x:Name="tb_address" Height="40" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Address}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Phone Number" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding phoneNumber}" Width="120"/>
+                <TextBox x:Name="tb_phone" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Phone}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Article" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding article}" Width="120"/>
+                <TextBox x:Name="tb_article" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding article}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Price" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding price}" Width="120"/>
+                <TextBox x:Name="tb_price" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding price}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Date" Width="65" VerticalAlignment="Top" />
@@ -42,31 +43,31 @@
 
         </StackPanel>
 
-        <StackPanel DataContext="{Binding SelectedItem, ElementName=Lbx_students}" Margin="473,463,27,204" Orientation="Vertical">
+        <StackPanel DataContext="{Binding ElementName=Lbx_students, Path=SelectedItem}" Margin="473,463,27,204" Orientation="Vertical">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Seller" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.048,-2.135"><Run Text="{Binding firstName}" Foreground="Blue" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}" /></TextBlock>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Firstname" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding firstName}" Width="120"/>
+                <TextBox  Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding firstName}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Last name" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding lastName}" Width="120"/>
+                <TextBox Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding lastName}" Width="120"/>
             </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+            <StackPanel  Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Address" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="40" TextWrapping="Wrap" Text="{Binding address}" Width="120"/>
+                <TextBox Height="40" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Address}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Phone Number" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" Text="{Binding phoneNumber}" Width="120"/>
+                <TextBox  Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Phone}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Article" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="Tbx_article" Height="23" TextWrapping="Wrap" Text="{Binding article}" Width="120"/>
+                <TextBox x:Name="Tbx_article" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding article}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Price" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="Tbx_price" Height="23" TextWrapping="Wrap" Text="{Binding price}" Width="120"/>
+                <TextBox x:Name="Tbx_price" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding price}" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
                 <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Date" Width="65" VerticalAlignment="Top" />
@@ -80,7 +81,10 @@
         <ListBox x:Name="Lbx_students" HorizontalAlignment="Left" Margin="43,113,0,0" VerticalAlignment="Top" Width="130" Height="99">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock><Run Text="{Binding firstName}" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}"/></TextBlock>
+                    <TextBlock>
+                        <Run Text="{Binding firstName}" FontWeight="Bold"/>
+                        <Run Text=" "/><Run Text="{Binding lastName}"/>
+                    </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
