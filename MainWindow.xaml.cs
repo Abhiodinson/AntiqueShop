@@ -23,7 +23,7 @@ namespace Wpf_AntiqueShop
     {
         ObservableCollection<ArticleName> articles;
         String filter = "";
-        private bool storeData;
+        //private bool storeData;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -56,20 +56,19 @@ namespace Wpf_AntiqueShop
 
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            TestStorage.WriteXml<ObservableCollection<ArticleName>>(articles, "StudentsTest.xml");
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
 
-        }
+
+
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var win = new Buyer_Seller();
+            var win = new Buyer_Seller_2_();
             win.Owner = this;
             win.Show();
             Visibility = Visibility.Hidden;
