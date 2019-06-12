@@ -6,79 +6,100 @@
         xmlns:local="clr-namespace:Wpf_AntiqueShop"
         mc:Ignorable="d"
         Closing="Window_Closing_1"
-        Title="Buyer_Seller_2_" Height="450" Width="800">
+        Title="Buyer_Seller_2_" Height="700" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFF6EBEB" Margin="0,0,-0.4,-621">
-        <StackPanel DataContext="{Binding ElementName=Lbx_students, Path=SelectedItem}" Margin="473,29,26,638" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Buyer" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.048,-2.135"><Run Text="{Binding firstName}" Foreground="Blue" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}" /></TextBlock>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Firstname" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="tb_firstName" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding firstName}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Last name" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="tb_lastName" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding lastName}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Address" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="tb_address" Height="40" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Address}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Phone Number" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="tb_phone" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Phone}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Article" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="tb_article" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding article}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Price" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="tb_price" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding price}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Date" Width="65" VerticalAlignment="Top" />
-                <DatePicker/>
+        <TabControl HorizontalAlignment="Left" Height="471" Margin="331,21,0,0" VerticalAlignment="Top" Width="388">
 
-            </StackPanel>
-            <Button Content="Confirm" Margin="108,0,68.8,0"  Height="20" Click="Button_Click" RenderTransformOrigin="-6.103,1.307"/>
+            <TabItem Header="Buyer">
+                <Canvas>
+                    <Grid Background="#FFE5E5E5"/>
 
-        </StackPanel>
+                    <StackPanel DataContext="{Binding ElementName=Lbx_students, Path=SelectedItem}" Orientation="Vertical" Canvas.Left="28" Canvas.Top="28" Height="391" Width="302">
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Buyer" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.048,-2.135"><Run Text="{Binding firstName}" Foreground="Blue" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}" /></TextBlock>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Firstname" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="tb_firstName" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding firstName}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Last name" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="tb_lastName" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding lastName}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Address" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="tb_address" Height="40" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Address}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Phone Number" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="tb_phone" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Phone}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Article" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="tb_article" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding article}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Price" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="tb_price" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding price}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Date" Width="65" VerticalAlignment="Top" />
+                            <DatePicker/>
 
-        <StackPanel DataContext="{Binding ElementName=Lbx_students, Path=SelectedItem}" Margin="473,463,27,204" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Seller" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.048,-2.135"><Run Text="{Binding firstName}" Foreground="Blue" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}" /></TextBlock>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Firstname" Width="65" VerticalAlignment="Top" />
-                <TextBox  Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding firstName}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Last name" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding lastName}" Width="120"/>
-            </StackPanel>
-            <StackPanel  Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Address" Width="65" VerticalAlignment="Top" />
-                <TextBox Height="40" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Address}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Phone Number" Width="65" VerticalAlignment="Top" />
-                <TextBox  Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Phone}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Article" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="Tbx_article" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding article}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Price" Width="65" VerticalAlignment="Top" />
-                <TextBox x:Name="Tbx_price" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding price}" Width="120"/>
-            </StackPanel>
-            <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
-                <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Date" Width="65" VerticalAlignment="Top" />
-                <DatePicker/>
+                        </StackPanel>
+                        <Button Content="Confirm" Margin="146,0,106.4,0"  Height="20" Width="50" Click="Button_Click" RenderTransformOrigin="-6.103,1.307"/>
 
-            </StackPanel>
-            <Button Content="Confirm" Margin="108,0,68.8,0"  Height="20" Click="Button_Click_1" RenderTransformOrigin="-6.103,1.307"/>
+                    </StackPanel>
 
-        </StackPanel>
-        <TextBox x:Name="Tbx_filter" HorizontalAlignment="Left" Height="23" Margin="43,29,0,0"  TextWrapping="Wrap" Text="" ToolTip="Enter Customer Last Name to filter" VerticalAlignment="Top" Width="130" TextChanged="Tbx_filter_TextChanged_1"/>
-        <ListBox x:Name="Lbx_students" HorizontalAlignment="Left" Margin="43,113,0,0" VerticalAlignment="Top" Width="130" Height="99">
+                </Canvas>
+            </TabItem>
+
+            <TabItem Header="Seller">
+                <Canvas>
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="13*"/>
+                            <ColumnDefinition Width="369*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <StackPanel DataContext="{Binding ElementName=Lbx_students, Path=SelectedItem}" Orientation="Vertical" Canvas.Left="30" Canvas.Top="27" Width="301" Height="382">
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Seller" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.048,-2.135"><Run Text="{Binding firstName}" Foreground="Blue" FontWeight="Bold"/><Run Text=" "/><Run Text="{Binding lastName}" /></TextBlock>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Firstname" Width="65" VerticalAlignment="Top" />
+                            <TextBox  Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding firstName}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Last name" Width="65" VerticalAlignment="Top" />
+                            <TextBox Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding lastName}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel  Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Address" Width="65" VerticalAlignment="Top" />
+                            <TextBox Height="40" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Address}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Phone Number" Width="65" VerticalAlignment="Top" />
+                            <TextBox  Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding Phone}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Article" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="Tbx_article" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding article}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Price" Width="65" VerticalAlignment="Top" />
+                            <TextBox x:Name="Tbx_price" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Text="{Binding price}" Width="120"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,-0.2"  VerticalAlignment="Top" Orientation="Horizontal" Width="208">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,0,-1.4,0" TextWrapping="Wrap" Text="Date" Width="65" VerticalAlignment="Top" />
+                            <DatePicker/>
+
+                        </StackPanel>
+                        <Button Content="Confirm" Margin="108,0,68.8,0"  Height="20" Width="50" Click="Button_Click_1" RenderTransformOrigin="-6.103,1.307"/>
+
+                    </StackPanel>
+
+                </Canvas>
+            </TabItem>
+        </TabControl>
+        <TextBox x:Name="Tbx_filter" HorizontalAlignment="Left" Height="23" Margin="43,21,0,0"  TextWrapping="Wrap" Text="" ToolTip="Enter Customer Last Name to filter" VerticalAlignment="Top" Width="147" TextChanged="Tbx_filter_TextChanged_1"/>
+        <ListBox x:Name="Lbx_students" HorizontalAlignment="Left" Margin="43,61,0,0" VerticalAlignment="Top" Width="147" Height="306">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
@@ -88,9 +109,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel VerticalAlignment="Bottom" Margin="23,0,621,789" FlowDirection="RightToLeft" Orientation="Horizontal">
-            <Button x:Name="Btn_delete" Content="Delete" HorizontalAlignment="Left" Click="Btn_delete_Click" VerticalAlignment="Top" Width="50" />
-            <Button x:Name="Btn_add" Content="Add" Click="Btn_add_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" />
+        <StackPanel VerticalAlignment="Bottom" Margin="43,0,645,861.4" FlowDirection="RightToLeft" Orientation="Horizontal">
+            <!--<Button x:Name="Btn_delete" Content="Delete" HorizontalAlignment="Left" Click="Btn_delete_Click" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.55,0.948" />-->
+            <Button x:Name="Btn_add" Content="Add" Click="Btn_add_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="50" />
+            <!--<Button x:Name="Btn_delete" Content="Delete" HorizontalAlignment="Left" Click="Btn_delete_Click" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.55,0.948" />-->
         </StackPanel>
 
     </Grid>
