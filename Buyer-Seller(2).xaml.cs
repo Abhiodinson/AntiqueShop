@@ -23,8 +23,9 @@ namespace Wpf_AntiqueShop
         ObservableCollection<CustomerName> customers;
         String filter = "";
         private bool storeData;
-        
 
+        public object Dgr_articles { get;  set; }
+       
 
         public Buyer_Seller_2_()
         {
@@ -65,17 +66,17 @@ namespace Wpf_AntiqueShop
 
         }
 
-        private void Btn_delete_Click(object sender, RoutedEventArgs e)
-        {
-            if (Lbx_students.SelectedItem == null)
-            {
-                MessageBox.Show("Please select an item to be deleted", "Error");
-                return;
-            }
-            customers.Remove(Lbx_students.SelectedItem as CustomerName);
-            Tbx_filter.Text = "";
+        //private void Btn_delete_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (Lbx_students.SelectedItem == null)
+        //    {
+        //        MessageBox.Show("Please select an item to be deleted", "Error");
+        //        return;
+        //    }
+        //    customers.Remove(Lbx_students.SelectedItem as CustomerName);
+        //    Tbx_filter.Text = "";
 
-        }
+        //}
 
 
 
@@ -105,12 +106,18 @@ namespace Wpf_AntiqueShop
             else
             {
                 MessageBox.Show("Article is sold");
+                var win = new ArticleInformation();
+                win.Owner = this;
+                win.Show();
+                Visibility = Visibility.Hidden;
             }
+            
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            
             if (tb_firstName.Text == "" && tb_lastName.Text == "" && tb_address.Text == "" && tb_phone.Text == "" && tb_article.Text == "" && tb_price.Text == "")
             {
                 MessageBox.Show("Please provide the information", "Error");
@@ -119,9 +126,12 @@ namespace Wpf_AntiqueShop
             else
             {
                 MessageBox.Show("Article is bought");
-            }
+                var win = new ArticleInformation();
+                win.Owner = this;
+                win.Show();
+                Visibility = Visibility.Hidden;
+            }            
         }
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             storeData = true;
@@ -137,14 +147,8 @@ namespace Wpf_AntiqueShop
         private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Owner.Visibility = Visibility.Visible;
-
+            
         }
 
-        private void Window_Closing_2(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (storeData)
-                TestStorage.WriteXml<ObservableCollection<CustomerName>>(customers, "CustomerTest.xml");
-
-        }
     }
 }
